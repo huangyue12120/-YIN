@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41c15f82e6fa9749a457b75da6b3954, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Resources/Excel/Dialogue.xlsx
+  WorksheetName: Dialogue
+  dataArray:
+  - id: 0
+    character: yinzi
+    text: "\u738B\u516B\u86CB\u7F16\u778E\u8BDD"
+    next: continue
+    jumpid: 1
+    selects: 
+  - id: 1
+    character: yinzi
+    text: "\u7F16\u778E\u8BDD\u738B\u516B\u86CB"
+    next: continue
+    jumpid: 2
+    selects: 
+  - id: 2
+    character: yinzi
+    text: "\u7F16\u778E\u8BDD\u7684\u662F\uFF1F"
+    next: select
+    jumpid: -1
+    selects: 0000000001000000
