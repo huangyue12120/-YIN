@@ -11,6 +11,7 @@ public class DialoguePanel : MonoBehaviour
 
     public Image image;//人物图像
     public Text dialogueText;//对话文本
+    public Text dialogueTextLong;//独白文本
     public Transform selectTrans;//选项生成位置
     public GameObject selectUI;//选项UI
 
@@ -30,19 +31,42 @@ public class DialoguePanel : MonoBehaviour
         {
             NextDialogue();
         }
+
+        //根据文本高度修改对齐
+        dialogueText.alignment = dialogueText.preferredHeight > 41 ? TextAnchor.UpperLeft : TextAnchor.UpperCenter;
+        dialogueTextLong.alignment = dialogueText.preferredHeight > 41 ? TextAnchor.UpperLeft : TextAnchor.UpperCenter;
     }
     
     //刷新对话界面
     public void UpdateDialogueUI(int dialogueId,string character,string dialogue)
     {
-        nowDialogue = dialogueId;//当前对话
-        image.sprite = Resources.Load<Sprite>("Sprite/Character/" + character);//头像
-        dialogueText.text = "<color=green>" + characterName[character] + "</color> :" + " " +dialogue;//文本
         //关闭选项
         foreach (Transform item in selectTrans)
         {
             Destroy(item.gameObject);
         }
+        //赋值当前对话
+        nowDialogue = dialogueId;
+        //头像
+        if(Resources.Load<Sprite>("Sprite/Character/" + character) != null)
+        {
+            image.gameObject.SetActive(true);
+            image.sprite = Resources.Load<Sprite>("Sprite/Character/" + character);
+            dialogueText.gameObject.SetActive(true);//正常文本框
+            dialogueTextLong.gameObject.SetActive(false);
+        }else
+        {
+            image.gameObject.SetActive(false);
+            dialogueText.gameObject.SetActive(false);//独白文本框
+            dialogueTextLong.gameObject.SetActive(true);
+        }
+        //文本
+        dialogueText.text = dialogueTextLong.text =
+        !character.Equals("null")
+        ?
+        "<color=green>" + characterName[character] + ":</color>" + " " +dialogue
+        :
+        dialogue;
     }
 
     //下一个对话
@@ -66,11 +90,16 @@ public class DialoguePanel : MonoBehaviour
             gameObject.SetActive(false);
             break;
         }
+
+        DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
     }
 
     //加载人物名字字典
     public void LoadCharacterName()
     {
-        characterName.Add("yinzi","寅子");
+        characterName.Add("huzi","胡子");
+        characterName.Add("nvsheng","女生们");
+        characterName.Add("zhujue","主角");
+        characterName.Add("nver","女二");
     }
 }
