@@ -32,4 +32,8 @@ public class DialogueData
   int[] selects = new int[0];
   public int[] Selects { get {return selects; } set { selects = value;} }
   
+  [SerializeField]
+  string key;
+  public string Key { get {return key; } set { key = value;} }
+  
 }
