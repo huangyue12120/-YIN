@@ -22,6 +22,6 @@ public class DialogueManager : MonoBehaviour
     //根据对话ID触发对话
     public void StartDialogue(int dialogueId)
     {
-        DialoguePanel._dialoguePanel.UpdateDialogueUI(dialogueId,dialogueExcel.dataArray[dialogueId].Character,dialogueExcel.dataArray[dialogueId].Text);
+        DialoguePanel._dialoguePanel.UpdateDialogueUI(dialogueId,dialogueExcel.dataArray[dialogueId].Character,dialogueExcel.dataArray[dialogueId].Text, dialogueExcel.dataArray[dialogueId].IsShowLeft);
     }
 }
