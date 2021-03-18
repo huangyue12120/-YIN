@@ -35,5 +35,8 @@ public class DialogueData
   [SerializeField]
   string key;
   public string Key { get {return key; } set { key = value;} }
-  
+    
+  [SerializeField]
+  bool isShowLeft; 
+  public bool IsShowLeft { get { return isShowLeft; } set { isShowLeft = value; } }
 }
