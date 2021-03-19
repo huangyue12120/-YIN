@@ -26,10 +26,25 @@ public class DialoguePanel : MonoBehaviour
 
     void Update() 
     {
+<<<<<<< Updated upstream
         //鼠标点击进行下一轮对话
         if(Input.GetMouseButtonDown(0))
         {
             NextDialogue();
+=======
+        if (!DialogueHistory._dialogueHistory.gameObject.activeInHierarchy)
+        {
+            //鼠标点击、按空格、按回车、鼠标滚轮向下滚动时进行下一轮对话
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                NextDialogue();
+            }
+            //滚轮向上打开历史对话界面
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                dialogueHistory.OpenUI();
+            }
+>>>>>>> Stashed changes
         }
 
         //根据文本高度修改对齐
@@ -67,6 +82,8 @@ public class DialoguePanel : MonoBehaviour
         "<color=green>" + characterName[character] + ":</color>" + " " +dialogue
         :
         dialogue;
+        //添加到历史对话
+        DialogueHistory._dialogueHistory.historyDialogueIDs.Add(dialogueId);
     }
 
     //下一个对话
@@ -90,8 +107,13 @@ public class DialoguePanel : MonoBehaviour
             gameObject.SetActive(false);
             break;
         }
+<<<<<<< Updated upstream
 
         DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
+=======
+        //触发对话结束后的事件
+        //DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
+>>>>>>> Stashed changes
     }
 
     //加载人物名字字典
