@@ -46,6 +46,10 @@ MonoBehaviour:
     name: key
     isEnable: 0
     isArray: 0
+  - type: 8
+    name: isShowLeft
+    isEnable: 0
+    isArray: 0
   excelFilePath: Assets/Resources/Excel/Dialogue.xlsx
   SheetNames:
   - Dialogue
