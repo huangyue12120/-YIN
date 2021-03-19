@@ -39,17 +39,19 @@ public class DialoguePanel : MonoBehaviour
 
     void Update() 
     {
-        if (!DialogueHistory.isScreenUp)
+        if (!DialogueHistory._dialogueHistory.gameObject.activeInHierarchy)
         {
             //鼠标点击、按空格、按回车、鼠标滚轮向下滚动时进行下一轮对话
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetAxis("Mouse ScrollWheel") < 0)
             {
                 NextDialogue();
             }
+            //滚轮向上打开历史对话界面
             else if (Input.GetAxis("Mouse ScrollWheel") > 0)
             {
-                dialogueHistory.open(nowDialogue);
+                dialogueHistory.OpenUI();
             }
+
         }
         //根据文本高度修改对齐
         dialogueText.alignment = dialogueText.preferredHeight > 41 ? TextAnchor.UpperLeft : TextAnchor.UpperCenter;
@@ -98,6 +100,8 @@ public class DialoguePanel : MonoBehaviour
         "<color=green>" + characterName[character] + ":</color>" + " " +dialogue
         :
         dialogue;
+        //添加到历史对话
+        DialogueHistory._dialogueHistory.historyDialogueIDs.Add(dialogueId);
     }
 
     //下一个对话
@@ -121,8 +125,9 @@ public class DialoguePanel : MonoBehaviour
             gameObject.SetActive(false);
             break;
         }
+        
+        DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
 
-        //DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
     }
 
     //加载人物名字字典
