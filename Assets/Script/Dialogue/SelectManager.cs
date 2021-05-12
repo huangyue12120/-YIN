@@ -13,8 +13,13 @@ public class SelectManager : MonoBehaviour
         selectExcel = Resources.Load<Select>("Excel/Select");
     }
 
-    public void Test()
+    public void TestA()
     {
-        DialogueManager._dialogueManager.StartDialogue(0);
+        DialogueManager._dialogueManager.StartDialogue(9);
+    }
+
+    public void TestB()
+    {
+        DialogueManager._dialogueManager.StartDialogue(10);
     }
 }
