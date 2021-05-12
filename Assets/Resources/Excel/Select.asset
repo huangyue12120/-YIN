@@ -16,8 +16,8 @@ MonoBehaviour:
   WorksheetName: Select
   dataArray:
   - id: 0
-    text: "\u738B\u516B\u86CB"
-    key: Test
+    text: "\u9009\u9879A"
+    key: TestA
   - id: 1
-    text: "\u738B\u5148\u751F"
-    key: Test
+    text: "\u9009\u9879B"
+    key: TestB

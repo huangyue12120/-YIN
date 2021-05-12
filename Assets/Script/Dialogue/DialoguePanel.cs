@@ -24,10 +24,8 @@ public class DialoguePanel : MonoBehaviour
     public Text dialogueText;//对话文本
     public Text dialogueTextLong;//独白文本
     public Transform selectTrans;//选项生成位置
-    public Transform historyTrans;//历史对话生成位置
     public Transform textTrans;//人物对话位置
     public GameObject selectUI;//选项UI
-    public ScrollRect historyScreen;//历史对话界面
     public DialogueHistory dialogueHistory;//历史对话
     int nowDialogue;//当前对话id
 
@@ -66,7 +64,7 @@ public class DialoguePanel : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
-        dialogueHistory.close();
+        dialogueHistory.Close();
         //赋值当前对话
         nowDialogue = dialogueId;
         //头像
@@ -107,6 +105,10 @@ public class DialoguePanel : MonoBehaviour
     //下一个对话
     public void NextDialogue()
     {
+        //触发事件
+        if(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key != "null")
+        DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
+
         switch (DialogueManager.dialogueExcel.dataArray[nowDialogue].Next)
         {
             case "continue":
@@ -125,9 +127,6 @@ public class DialoguePanel : MonoBehaviour
             gameObject.SetActive(false);
             break;
         }
-        
-        DialogueEvents._dialogueEvents.SendMessage(DialogueManager.dialogueExcel.dataArray[nowDialogue].Key);
-
     }
 
     //加载人物名字字典

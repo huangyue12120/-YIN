@@ -10,4 +10,9 @@ public class DialogueEvents : MonoBehaviour
     {
         _dialogueEvents = this;
     }
+    
+    public void Thunder()
+    {
+        SoundManager._soundManager.thunder.Play();
+    }
 }
