@@ -39,4 +39,16 @@ public class DialogueData
   [SerializeField]
   bool isShowLeft; 
   public bool IsShowLeft { get { return isShowLeft; } set { isShowLeft = value; } }
+
+  [SerializeField]
+  string musicEffect;
+  public string MusicEffect { get { return musicEffect; } set { musicEffect = value; } }
+
+  [SerializeField]
+  string soundEffect;
+  public string SoundEffect { get { return soundEffect; } set { soundEffect = value; } }
+
+  [SerializeField]
+  string vocalEffect;
+  public string VocalEffect { get { return vocalEffect; } set { vocalEffect = value; } }
 }

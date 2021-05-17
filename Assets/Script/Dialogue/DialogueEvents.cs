@@ -13,6 +13,6 @@ public class DialogueEvents : MonoBehaviour
     
     public void Thunder()
     {
-        SoundManager._soundManager.thunder.Play();
+        print("轰隆");
     }
 }

@@ -23,5 +23,10 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(int dialogueId)
     {
         DialoguePanel._dialoguePanel.UpdateDialogueUI(dialogueId,dialogueExcel.dataArray[dialogueId].Character,dialogueExcel.dataArray[dialogueId].Text, dialogueExcel.dataArray[dialogueId].IsShowLeft);
+        MusicManager._musicManager.checkIfChange(dialogueId);
+        SoundManager._soundManager.checkIfChange(dialogueId);
+        VocalManager._vocalManager.checkIfChange(dialogueId);
     }
+
+
 }

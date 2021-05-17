@@ -37,7 +37,7 @@ public class DialoguePanel : MonoBehaviour
 
     void Update() 
     {
-        if (!DialogueHistory._dialogueHistory.gameObject.activeInHierarchy)
+        if (!DialogueHistory._dialogueHistory.gameObject.activeInHierarchy && !Settings._settings.gameObject.activeInHierarchy)
         {
             //鼠标点击、按空格、按回车、鼠标滚轮向下滚动时进行下一轮对话
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -48,6 +48,10 @@ public class DialoguePanel : MonoBehaviour
             else if (Input.GetAxis("Mouse ScrollWheel") > 0)
             {
                 dialogueHistory.OpenUI();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Settings._settings.Open();
             }
 
         }
@@ -112,20 +116,20 @@ public class DialoguePanel : MonoBehaviour
         switch (DialogueManager.dialogueExcel.dataArray[nowDialogue].Next)
         {
             case "continue":
-            DialogueManager._dialogueManager.StartDialogue(DialogueManager.dialogueExcel.dataArray[nowDialogue].Jumpid);
-            break;
+                DialogueManager._dialogueManager.StartDialogue(DialogueManager.dialogueExcel.dataArray[nowDialogue].Jumpid);
+                break;
 
             case "select":
-            if(selectTrans.childCount == 0)
-            for (int i = 0; i < DialogueManager.dialogueExcel.dataArray[nowDialogue].Selects.Length; i++)
-            {
-                Instantiate(selectUI,selectTrans).GetComponent<SelectUI>().UpdateUI(SelectManager.selectExcel.dataArray[DialogueManager.dialogueExcel.dataArray[nowDialogue].Selects[i]].Text,SelectManager.selectExcel.dataArray[DialogueManager.dialogueExcel.dataArray[nowDialogue].Selects[i]].Key);
-            }
-            break;
+                if(selectTrans.childCount == 0)
+                for (int i = 0; i < DialogueManager.dialogueExcel.dataArray[nowDialogue].Selects.Length; i++)
+                {
+                    Instantiate(selectUI,selectTrans).GetComponent<SelectUI>().UpdateUI(SelectManager.selectExcel.dataArray[DialogueManager.dialogueExcel.dataArray[nowDialogue].Selects[i]].Text,SelectManager.selectExcel.dataArray[DialogueManager.dialogueExcel.dataArray[nowDialogue].Selects[i]].Key);
+                }
+                break;
 
             case "end":
-            gameObject.SetActive(false);
-            break;
+                gameObject.SetActive(false);
+                break;
         }
     }
 

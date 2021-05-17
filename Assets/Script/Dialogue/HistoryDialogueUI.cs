@@ -17,6 +17,9 @@ public class HistoryDialogueUI : MonoBehaviour
         image.sprite = Resources.Load<Sprite>("Sprite/Character/" + DialogueManager.dialogueExcel.dataArray[count].Character + "_head");
         if(image.sprite == null)
         image.gameObject.SetActive(false);
-        text.text = DialogueManager.dialogueExcel.dataArray[count].Text;
+        text.text = DialogueManager.dialogueExcel.dataArray[count].Character.Equals("null") ?
+            DialogueManager.dialogueExcel.dataArray[count].Text
+            :
+            DialoguePanel._dialoguePanel.characterName[DialogueManager.dialogueExcel.dataArray[count].Character] + ": " + DialogueManager.dialogueExcel.dataArray[count].Text;
     }
 }

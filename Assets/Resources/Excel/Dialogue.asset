@@ -23,6 +23,9 @@ MonoBehaviour:
     selects: 
     key: Thunder
     isShowLeft: 0
+    musicEffect: null
+    soundEffect: null
+    vocalEffect: null
   - id: 1
     character: nvsheng
     text: "\u554A\uFF01\uFF01"
@@ -31,6 +34,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: null
+    soundEffect: null
+    vocalEffect: null
   - id: 2
     character: null
     text: "\u7537\u751F\u4EEC\u54C4\u7B11\u7684\u58F0\u97F3"
@@ -39,6 +45,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: null
   - id: 3
     character: zhujue
     text: "\u80E1\u5B50\uFF0C\u4F60\u8FD9\u9B3C\u6545\u4E8B\u4E5F\u4E0D\u884C\u554A\uFF0C\u4E5F\u5C31\u5413\u552C\u5413\u552C\u5973\u751F\u4E86\uFF0C\u6211\u6765\u4E00\u4E2A\uFF01"
@@ -47,6 +56,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 1
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: null
   - id: 4
     character: nver
     text: "\u5509\u5440\u522B\u8BF4\u4E86\uFF0C\u6211\u2026\u6211\u5BB3\u6015"
@@ -55,6 +67,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: null
   - id: 5
     character: null
     text: "\u54CE\u5440\u4F60\u6015\u4EC0\u4E48\u554A\uFF0C\u4F60\u4E5F\u4E0D\u770B\u770B\u6211\u4EEC\u73B0\u5728\u5728\u4EC0\u4E48\u5730\u65B9\uFF0C\u65E5\u62A5\u5927\u53A6\uFF01\u4F20\u95FB\u5168\u5929\u6D25\u5E02\u95F9\u9B3C\u6700\u90AA\u4E4E\u7684\u5730\u65B9\uFF0C\u4F60\u8FDE\u5192\u9669\u961F\u90FD\u6562\u62A5\u540D\uFF0C\u51E0\u4E2A\u9B3C\u6545\u4E8B\u5C31\u4E0D\u884C\u4E86\uFF1F"
@@ -63,6 +78,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: null
   - id: 6
     character: null
     text: "\u5C31\u662F\u561B\uFF0C\u8FD9\u534A\u5929\u4E86\uFF0C\u8FDE\u4E2A\u9B3C\u5F71\u90FD\u770B\u4E0D\u7740\uFF0C\u4E0D\u6D3B\u8DC3\u6D3B\u8DC3\u6C14\u6C1B\uFF0C\u4E00\u4F1A\u9B3C\u90FD\u5F97\u7761\u7740\u4E86\u3002\u5509\uFF0C\u4F60\u4EEC\u8BF4\u8FD9\u5730\u65B9\u5230\u5E95\u6709\u9B3C\u6CA1\u9B3C\u554A\uFF1F"
@@ -71,6 +89,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: Thunder
+    vocalEffect: null
   - id: 7
     character: null
     text: "\u6709\u561B\u9B3C\u554A\uFF0C\u90FD\u662F\u4E00\u4F20\u5341\u5341\u4F20\u767E\u80E1\u54A7\u54A7\u7684"
@@ -79,6 +100,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: null
   - id: 8
     character: zhujue
     text: "\u55E8\uFF0C\u522B\u778E\u8D77\u54C4\u554A\uFF0C\u6211\u7ED9\u4F60\u4EEC\u8BB2\u4E2A\u524D\u4E24\u5E74\u6211\u771F\u7ECF\u5386\u8FC7\u7684\u4E8B\u5427\uFF0C\u771F\u4E8B\u554A\uFF0C\u738B\u516B\u86CB\u7F16\u778E\u8BDD\uFF0C\u6545\u4E8B\u53D1\u751F\u5C31\u53D1\u751F\u5728\u4E00\u4E2A\u5730\u4E0B\u5BA4......."
@@ -87,6 +111,9 @@ MonoBehaviour:
     selects: 0000000001000000
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: Thunder
   - id: 9
     character: null
     text: "\u9009\u62E9\u4E86\u9009\u9879A"
@@ -95,6 +122,9 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: BLIZZARD
+    soundEffect: null
+    vocalEffect: null
   - id: 10
     character: null
     text: "\u9009\u62E9\u4E86\u9009\u9879B"
@@ -103,3 +133,6 @@ MonoBehaviour:
     selects: 
     key: null
     isShowLeft: 0
+    musicEffect: EarlySummerNight
+    soundEffect: null
+    vocalEffect: null
